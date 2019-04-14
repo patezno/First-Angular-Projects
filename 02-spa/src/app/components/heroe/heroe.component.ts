@@ -12,10 +12,12 @@ export class HeroeComponent {
   heroe: any = {};
 
   constructor(private activatedRoute: ActivatedRoute,
+              // tslint:disable-next-line: variable-name
               private _heroesService: HeroesService) {
 
-    this.activatedRoute.params.subscribe(params =>
-      this.heroe = this._heroesService.getHeroe(params.id)
+    this.activatedRoute.params.subscribe(params => {
+      this.heroe = this._heroesService.getHeroe(params.id);
+      console.log(this.heroe); }
     );
 
    }

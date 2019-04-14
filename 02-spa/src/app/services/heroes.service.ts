@@ -82,7 +82,7 @@ export class HeroesService {
     }
 
     getHeroe(id: string) {
-        this.heroes[id];
+        return this.heroes[id];
     }
 
 }
