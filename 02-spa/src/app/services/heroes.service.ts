@@ -19,7 +19,7 @@ export class HeroesService {
           'que le han dado al personaje.',
           img: 'assets/img/batman.png',
           aparicion: '1939-05-01',
-          casa:'DC'
+          casa: 'DC'
         },
         {
           nombre: 'Daredevil',
