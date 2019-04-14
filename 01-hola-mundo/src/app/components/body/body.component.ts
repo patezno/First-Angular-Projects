@@ -5,5 +5,14 @@ import {Component} from '@angular/core';
     templateUrl: './body.component.html'
 })
 export class BodyComponent {
-    
+
+    mostrar = true;
+
+    frase: any = {
+        mensaje: 'YEAH',
+        autor: 'sharkpuppet'
+    };
+
+    personajes: string[] = ['spiderman', 'venom', 'octopus'];
+
 }
