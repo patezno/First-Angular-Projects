@@ -11,7 +11,8 @@ export class AppComponent {
 
   title = 'pipes';
 
-  nombre = 'Fernando';
+  nombre = 'Carlos';
+  nombre2 = 'carlOs alHama gil';
 
   arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
