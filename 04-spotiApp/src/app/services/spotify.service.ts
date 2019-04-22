@@ -14,9 +14,6 @@ export class SpotifyService {
       'Authorization': 'Bearer BQApTwoo-sNKKx7JiQL5K66IQW4zi-TPtjpAoz_JASMqNQ14zOufDO7L9IaLNCup6Jzn5gzadvoMLrqnTCo'
     });
 
-    this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', {headers})
-    .subscribe(data => {
-      console.log(data);
-    });
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', {headers});
   }
 }
