@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { resolve } from 'path';
-import { reject } from 'q';
 
 @Component({
   selector: 'app-root',
@@ -37,4 +35,6 @@ export class AppComponent {
   });
 
   fecha = new Date();
+
+  video = 'm4wUxwYOb1I';
 }
