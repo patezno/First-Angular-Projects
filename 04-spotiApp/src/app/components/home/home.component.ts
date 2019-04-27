@@ -11,10 +11,16 @@ export class HomeComponent {
 
   newSongs: any[] = [];
 
+  loading: boolean;
+
   constructor(private spotify: SpotifyService) {
+    
+    this.loading = true;
+    
     this.spotify.getNewReleases()
     .subscribe(data => {
       this.newSongs = data;
+      this.loading = false;
     });
   }
 
