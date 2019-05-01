@@ -15,7 +15,7 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/${query}`;
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer  BQBOOk0HSol3GRiXW6fc_K4o7b_GVzbV3dX1eWwl7mzSwKZsJj3TQuBPOeJ7_2F4s22CtgKBcbO3uAIem-8'
+      'Authorization': 'Bearer  BQDzkGfMpwZmBgUzde0w21qNIdGViKGPiUBxKfdpSFdCQIvnVKawAZY7B8JVK58PRh7Qcb3043nnfbz1XUI'
     });
 
     return this.http.get(url, {headers});
