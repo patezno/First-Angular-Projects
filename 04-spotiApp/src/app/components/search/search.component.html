@@ -6,4 +6,6 @@
 
 <app-loading *ngIf="loading" class="m-5"></app-loading>
 
+<app-error *ngIf="error"></app-error>
+
 <app-tarjetas *ngIf="!loading" [items]="artistas"></app-tarjetas>
