@@ -12,10 +12,17 @@ export class DeseosService {
     this.cargarStorage();
   }
 
-  crearLista(titulo: string) {
+  crearLista(titulo: string): number {
     const newLista = new Lista(titulo);
     this.listas.push(newLista);
     this.guardarStorage();
+    return newLista.id;
+  }
+
+  obtenerLista(id: string | number) {
+    id = Number(id);
+
+    return this.listas.find(listaData => listaData.id === id);
   }
 
   guardarStorage() {
