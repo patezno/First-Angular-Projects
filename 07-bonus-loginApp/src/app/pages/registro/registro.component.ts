@@ -9,14 +9,11 @@ import { NgForm } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit {
 
-  usuario: Usuario;
+  usuario: Usuario = new Usuario();
 
   constructor() { }
 
-  ngOnInit() {
-    this.usuario = new Usuario();
-    this.usuario.email = 'patezno97@gmail.com';
-  }
+  ngOnInit() {}
 
   onSubmit(form: NgForm) {
     if (form.invalid) {
