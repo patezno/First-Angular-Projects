@@ -13,10 +13,15 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
+  recordarme: boolean;
 
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('email')) {
+      this.usuario.email = localStorage.getItem('email');
+      this.recordarme = true;
+    }
   }
 
   login(form: NgForm) {
@@ -33,7 +38,13 @@ export class LoginComponent implements OnInit {
 
     this.auth.logIn(this.usuario).subscribe(response => {
       console.log('LogIn', response);
+
       Swal.close();
+
+      if (this.recordarme) {
+        localStorage.setItem('email', this.usuario.email);
+      }
+
       this.router.navigateByUrl('/home');
     }, err => {
       console.log('Error logIn', err);

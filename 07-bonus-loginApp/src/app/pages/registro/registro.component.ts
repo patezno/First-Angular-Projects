@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class RegistroComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
+  recordarme: boolean;
 
   constructor(private auth: AuthService, private router: Router) { }
 
@@ -31,6 +32,9 @@ export class RegistroComponent implements OnInit {
     this.auth.nuevoUsuario(this.usuario).subscribe(response => {
       console.log('Respuesta firebase', response);
       Swal.close();
+      if (this.recordarme) {
+        localStorage.setItem('email', this.usuario.email);
+      }
       this.router.navigateByUrl('/home');
     }, err => {
       console.log('Error', err);
