@@ -9,14 +9,16 @@ import { map } from 'rxjs/operators';
 export class AuthService {
 
   private url = 'https://identitytoolkit.googleapis.com/v1/accounts:';
-  private apikey = '';
+  private apikey = 'AIzaSyDvV4MWk1E9wZFtJmDH_CuZk2In6hM1DJ4';
   userToken: string;
 
   constructor(private http: HttpClient) {
     this.leerToken();
   }
 
-  logOut() {}
+  logOut() {
+    localStorage.removeItem('token');
+  }
 
   logIn(usuario: Usuario) {
     const authData = {
