@@ -12,4 +12,6 @@ export class TemplateComponent implements OnInit {
   ngOnInit() {
   }
 
+  guardar() {}
+
 }
