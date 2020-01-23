@@ -29,7 +29,7 @@ export class EditMapComponent implements OnInit {
   }
 
   guardarCambios() {
-    console.log('guardarCambios');
+    this.dialogRef.close(this.form.value);
   }
 
   onNoClick() {
