@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-data',
@@ -18,9 +18,9 @@ export class DataComponent implements OnInit {
 
   buildForm() {
     this.form = new FormGroup({
-      nombre: new FormControl('Carlos'),
-      apellido: new FormControl(),
-      correo: new FormControl()
+      nombre: new FormControl('', Validators.required),
+      apellido: new FormControl('', Validators.required),
+      correo: new FormControl('', Validators.email)
     });
   }
 
