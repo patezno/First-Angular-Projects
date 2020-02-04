@@ -25,10 +25,15 @@ export class ChatService {
   }
 
   login(metodo: string) {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    if (metodo === 'google') {
+      this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    } else {
+      this.afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
+    }
   }
 
   logout() {
+    this.usuario = {};
     this.afAuth.auth.signOut();
   }
 

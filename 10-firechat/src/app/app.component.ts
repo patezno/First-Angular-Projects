@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ChatService } from './services/chat.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,5 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
 
-  constructor() {
-  }
+  constructor(public chatService: ChatService) {}
 }
