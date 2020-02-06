@@ -10,6 +10,7 @@ export class PeliculasService {
 
   private apikey = '6b6b33eb4942fd739eaf2a8a4d671e17';
   private urlMoviedb = 'https://api.themoviedb.org/3/';
+  peliculas = []
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +26,9 @@ export class PeliculasService {
 
   buscarPeliculas(text: string) {
     const url = `${this.urlMoviedb}search/movie?query=${text}&sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
-    return this.http.get(url).pipe(map((res: any) => res.results));
+    return this.http.get(url).pipe(map((res: any) => {
+      this.peliculas = res.results;
+    }));
   }
 
   getCartelera() {

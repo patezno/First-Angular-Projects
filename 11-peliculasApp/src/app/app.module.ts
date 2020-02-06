@@ -10,6 +10,7 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 import { AppRoutesModule } from './app.routes';
 import { PeliculaImgPipe } from './pipes/pelicula-img.pipe';
 import { GaleriaComponent } from './components/home/galeria/galeria.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GaleriaComponent } from './components/home/galeria/galeria.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutesModule
+    AppRoutesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

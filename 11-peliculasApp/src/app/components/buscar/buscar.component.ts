@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeliculasService } from '../../services/peliculas.service';
 
 @Component({
   selector: 'app-buscar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarComponent implements OnInit {
 
-  constructor() { }
+  buscar: string;
+
+  constructor(public peliculasService: PeliculasService) { }
 
   ngOnInit() {
+  }
+
+  buscarPelicula() {
+    if (this.buscar.length === 0) {
+      return;
+    }
+    this.peliculasService.buscarPeliculas(this.buscar).subscribe();
   }
 
 }
