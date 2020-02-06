@@ -18,6 +18,11 @@ export class PeliculasService {
     return this.http.get(url).pipe(map((res: any) => res.results));
   }
 
+  getPopularesNinos() {
+    const url = `${this.urlMoviedb}discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
+    return this.http.get(url).pipe(map((res: any) => res.results));
+  }
+
   buscarPeliculas(text: string) {
     const url = `${this.urlMoviedb}search/movie?query=${text}&sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
     return this.http.get(url).pipe(map((res: any) => res.results));
