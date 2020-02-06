@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class PeliculaComponent implements OnInit {
 
   pelicula: any;
+  callback: string;
+  busqueda: string;
 
   constructor(private peliculasService: PeliculasService, private activatedRoute: ActivatedRoute) { }
 
@@ -18,6 +20,10 @@ export class PeliculaComponent implements OnInit {
       this.peliculasService.getPelicula(params.id).subscribe(data => {
         this.pelicula = data;
       });
+      this.callback = params.pag;
+      if (params.busqueda) {
+        this.busqueda = params.busqueda;
+      }
     });
   }
 
