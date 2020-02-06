@@ -37,4 +37,9 @@ export class PeliculasService {
     const url = `${this.urlMoviedb}discover/movie?primary_release_date.gte=${startDate}&primary_release_date.lte=${finishDate}&api_key=${this.apikey}&language=es`;
     return this.http.get(url).pipe(map((res: any) => res.results));
   }
+
+  getPelicula(id: string) {
+    const url = `${this.urlMoviedb}movie/${id}?api_key=${this.apikey}&language=es`;
+    return this.http.get(url);
+  }
 }
