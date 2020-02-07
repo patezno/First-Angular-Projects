@@ -19,4 +19,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  verVideo(video: any) {}
+
 }
